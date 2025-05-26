@@ -1,0 +1,21 @@
+# подик для кубика 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod
+  labels:
+    name: redis
+spec:
+  containers:
+  - name: redis-container
+    image: redis:alpine
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+    ports:
+      - containerPort: 9443

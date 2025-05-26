@@ -1,0 +1,22 @@
+# подик для кубика 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apache-pod
+  labels:
+    name: apache
+spec:
+  containers:
+  - name: apache-container
+    image: apache-cont
+    imagePullPolicy: Never
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+    ports:
+      - containerPort: 80
